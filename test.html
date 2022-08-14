@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .p1 {
+    border: 1px solid black;
+  }
+
+  .p2 {
+    border: 1px solid red;
+  }
+</style>
+
+<head>
+  <title>Le jQuery</title>
+</head>
+
+<body>
+  <h1>Découverte du jQuery</h1>
+  <p class="p1">Un premier paragraphe</p>
+  <p class="p2">Un second paragraphe</p>
+  <script src="../jquery-3.6.0.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.p2').hide();
+      $('.p1').mouseenter(function () {
+        $('.p2').show();
+      });
+      $('.p1').mouseleave(function () {
+        $('.p2').hide();
+      })
+    });
+  </script>
+</body>
+
+</html>
