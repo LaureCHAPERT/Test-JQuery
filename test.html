@@ -25,12 +25,13 @@
   <script>
     $(document).ready(function () {
       $('.p2').hide();
-      $('.p1').mousedown(function () {
-        $('.p2').show();
-      });
-      $('.p1').mouseup(function () {
-        $('.p2').hide();
-      })
+      $('.p1').hover(
+        function () {
+          $('.p2').show();
+        },
+        function () {
+          $('.p2').hide()
+        });
     });
   </script>
 </body>
