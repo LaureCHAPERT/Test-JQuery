@@ -25,10 +25,10 @@
   <script>
     $(document).ready(function () {
       $('.p2').hide();
-      $('.p1').mouseenter(function () {
+      $('.p1').mousedown(function () {
         $('.p2').show();
       });
-      $('.p1').mouseleave(function () {
+      $('.p1').mouseup(function () {
         $('.p2').hide();
       })
     });
