@@ -17,8 +17,9 @@
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      //On récupère la taille de notre titre h1
+      $('h1').css('font-size', '50px');
       var taille = $('h1').css('font-size');
+
       //On affiche la valeur récupérée
       $('#test').text(taille);
     });
