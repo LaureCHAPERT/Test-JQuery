@@ -26,18 +26,19 @@
       <li>Troisième</li>
       <li class="li4">Quatrième</li>
     </ul>
-    <p>Un autre paragraphe</p>
-    <p>Un troisième paragraphe</p>
+    <p class="p2">Un autre paragraphe</p>
+    <p class="p3">Un troisième paragraphe</p>
   </div>
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      //élément frère suivant directement le h1
-      $('h1').next().css('color', 'red');
-      //tous les éléments frères à .p1
-      $('.p1').nextAll().css('color', 'purple');
-      //tous les éléments frères de .li1 jusqu'à .li4 non compris
-      $('.li1').nextUntil('.li4').css('color', 'orange');
+      //éléments frères précédent l'élément (et non plus suivant avec siblings)
+      //élément frère avant .p3
+      $('.p3').prev().css('color', 'red');
+      //tous les élments frères avant .p2
+      $('.p2').prevAll().css('color', 'purple');
+      //tous les éléments avant .li4 jusqu'à .li1
+      $('.li4').prevUntil('.li1').css('color', 'orange');
     });
   </script>
 </body>
