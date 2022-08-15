@@ -10,25 +10,27 @@
 
 <body>
   <h1>Gestion d'évènements avec ON </h1>
-  <label for="fsc">CHamp à focus</label>
-  <input type="text" placeholder="Je veux  le focus" id="fcs">
-  <button id="trg">Forcer le focus avec trigger()</button>
-  <button id="trgh">Focus le focus avec triggerHandler()</button>
-  <br><span id="msg"></span>
+  <button id="b1">Pas de clic possible</button>
+  <button id="b2">Ajout de gestionnaire d'évenements clic</button>
+  <button id="b3">Suppression de gestionnaire d'évenements</button>
+
+  <br><span id="msg">Bouton cliqué</span>
 
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('#trg').click(function () {
-        $('#fcs').trigger('focus');
-      });
-      $('#trgh').click(function () {
-        $('#fcs').triggerHandler('focus');
-      });
+      $('#msg').hide();
+      $('#b2').click(function () {
 
-      $('#fcs').focus(function () {
-        $('#msg').text('evenement focus déclenché')
+        $('#b1').on('click', function () {
+          $('#msg').show();
+        });
+        $('#b1').text('Vous pouvez maintenant me cliquer')
+      });
+      $('#b3').click(function () {
+        $('#b1').off('click');
+        $('#b1').text('PLus de clic possible')
       })
 
     });
