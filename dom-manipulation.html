@@ -9,19 +9,15 @@
 </head>
 
 <body>
-  <h1>Manipulation de DOM</h1>
+  <h1>Manipulation de <mark>DOM HTML</mark> </h1>
   <span id="test"></span>
-
-
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('h1').css('font-size', '50px');
-      var taille = $('h1').css('font-size');
-
-      //On affiche la valeur récupérée
-      $('#test').text(taille);
+      var titre = $('h1').html();
+      $('h1').html('<mark>DOM</mark> manipulé !')
+      $('#test').html(titre);
     });
   </script>
 </body>
