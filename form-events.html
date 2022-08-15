@@ -10,24 +10,17 @@
 
 <body>
   <h1>Gestion d'évènements focus </h1>
-  <fieldset id="fld">
-    <label for="prenom">Entrez votre prénom :</label>
-    <input type="text" id="prenom" name="prenom">
-
-    <label for="name">Entrez votre nom</label>
-    <input type="text" id="nom" name="nom">
-  </fieldset>
+  <select name="liste" id="list">
+    <option value="c1" selected="selected">Choix 1 </option>
+    <option value="c2">Choix 2 </option>
+  </select>
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('#prenom').focus(function () {
-        $(this).css('background-color', 'yellow');
-      })
-      $('#prenom').blur(function () {
-        $(this).css('background-color', 'purple');
-      })
-
+      $('#list').change(function () {
+        alert('Nouvelle option sélectionnée')
+      });
 
     });
   </script>
