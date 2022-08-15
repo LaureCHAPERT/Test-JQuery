@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+
+<body>
+  <h1>Manipulation de DOM</h1>
+  <span id="test"></span>
+
+
+
+  <script src="../jquery-3.6.0.js"></script>
+  <script>
+    $(document).ready(function () {
+      //On récupère la taille de notre titre h1
+      var taille = $('h1').css('font-size');
+      //On affiche la valeur récupérée
+      $('#test').text(taille);
+    });
+  </script>
+</body>
+
+</html>
