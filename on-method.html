@@ -6,32 +6,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ON</title>
-  <style>
-    div {
-      border: 1px solid black;
-    }
-  </style>
 </head>
 
 <body>
   <h1>Gestion d'évènements avec ON </h1>
-  <div class="div1">
-    <p>un premier paragraphe</p>
-    <p>un second paragraphe</p>
-  </div>
-  <span id="msg"></span>
+  <label for="fsc">CHamp à focus</label>
+  <input type="text" placeholder="Je veux  le focus" id="fcs">
+  <button id="trg">Forcer le focus avec trigger()</button>
+  <button id="trgh">Focus le focus avec triggerHandler()</button>
+  <br><span id="msg"></span>
+
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('.div1').on({
-        mouseenter: function () {
-          $('#msg').text('Vous êtes entrés dans la div')
-        },
-        mouseleave: function () {
-          $('#msg').text('Vous êtes sortis de la div');
-        }
+      $('#trg').click(function () {
+        $('#fcs').trigger('focus');
       });
+      $('#trgh').click(function () {
+        $('#fcs').triggerHandler('focus');
+      });
+
+      $('#fcs').focus(function () {
+        $('#msg').text('evenement focus déclenché')
+      })
 
     });
   </script>
