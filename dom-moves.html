@@ -7,38 +7,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accéder à un élément enfant/parent/de même niveau</title>
   <style>
-    html,
-    body,
     h1,
     ul,
-    li,
-    span {
+    p,
+    li {
       color: black;
     }
   </style>
 </head>
 
 <body>
-
-  <h1>Manipulation du DOM</h1>
-  <ul class="l1">
-    <li class="li1">Premier élément de liste</li>
-    <li>Deuxième élément
-      <ul class="l2">
-        <li>Element 1 de sous liste</li>
-        <li>Element 2 de sous liste</li>
-        <li>Element 3 de sous liste</li>
-      </ul>
-    </li>
-    <li class="li1">Troisième élément de liste</li>
-  </ul>
-
+  <div>
+    <h1>Manipulation du DOM</h1>
+    <p class="p1">Un premier paragraphe</p>
+    <ul>(liste ul)
+      <li>Premier</li>
+      <li>Deuxième</li>
+      <li>Troisième</li>
+    </ul>
+    <p>Un autre paragraphe</p>
+  </div>
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('.l1').find('*').css({
-        'color': 'red',
-      })
+      $('h1').siblings().css('color', 'red')
     });
   </script>
 </body>
