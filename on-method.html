@@ -6,17 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ON</title>
+  <style>
+    div {
+      border: 1px solid black;
+    }
+  </style>
 </head>
 
 <body>
   <h1>Gestion d'évènements avec ON </h1>
-  <p>un premier paragraphe</p>
-  <p>un second paragraphe</p>
+  <div class="div1">
+    <p>un premier paragraphe</p>
+    <p>un second paragraphe</p>
+  </div>
+  <span id="msg"></span>
+
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('p').on('click', function () {
-        $(this).hide();
+      $('.div1').on('mouseenter mouseleave', function () {
+        $('#msg').text('Vous êtes entrés ou sortis de la div');
       })
 
     });
