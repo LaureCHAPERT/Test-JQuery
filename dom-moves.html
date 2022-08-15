@@ -7,8 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accéder à un élément enfant/parent/de même niveau</title>
   <style>
+    html,
+    body,
+    h1,
+    ul,
+    li,
     span {
-      color: blue;
+      color: black;
+      border: 2px solid green;
+      padding: 5px;
+      margin: 5px;
+      display: block;
     }
   </style>
 </head>
@@ -17,17 +26,24 @@
 
 
   <h1>Manipulation du DOM</h1>
-  <p>Element p parent du <span>premier span</span></p>
-  <ul>
-    <li>Element li parent du <span>span n°2</span></li>
-    <li>Deuxieme élément li</li>
+  <ul>(elt ul n1)
+    <li>Premier élément de liste (elt li n°1.1)</li>
+    <li>Element li contenant (elt li n°1.2)
+      <ul>(elt ul n2
+        <li>une autre liste (elt li n°2.1)</li>
+        <li>avec notre (elt li n°2.2) <span>span</span></li>
+      </ul>
+    </li>
+    <li>Troisième élément de liste (elt li n°1.3)</li>
   </ul>
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('span').parent().css('color', 'red');
-
+      $('span').parents().css({
+        'color': 'blue',
+        'border': '2px solid orange'
+      });
     });
   </script>
 </body>
