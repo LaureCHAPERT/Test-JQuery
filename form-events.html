@@ -10,17 +10,19 @@
 
 <body>
   <h1>Gestion d'évènements focus </h1>
-  <select name="liste" id="list">
-    <option value="c1" selected="selected">Choix 1 </option>
-    <option value="c2">Choix 2 </option>
-  </select>
-
+  <form id="form" action="">
+    <select name="liste" id="list">
+      <option value="c1" selected="selected">Choix 1 </option>
+      <option value="c2">Choix 2 </option>
+    </select>
+    <input type="submit" value="Envoyer">
+  </form>
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('#list').change(function () {
-        alert('Nouvelle option sélectionnée')
-      });
+      $('#form').submit(function () {
+        alert('formulaire envoyé');
+      })
 
     });
   </script>
