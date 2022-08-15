@@ -21,7 +21,9 @@
       $('#c').change(function () {
         var v = $(this);
         $('#test').html(
+          //valeur attribut ne peut pas changer
           '<br> Valeur attribut : ' + v.attr('checked') +
+          //valeur des propriétés peuvent changer
           '<br> Valeur propriété ' + v.prop('checked')
         );
       });
