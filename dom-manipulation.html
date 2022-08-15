@@ -9,15 +9,34 @@
 </head>
 
 <body>
-  <h1>Manipulation de <mark>DOM HTML</mark> </h1>
-  <span id="test"></span>
+  <h1>Manipulation de DOM HTML </h1>
+  <label for="prenom">Prénom</label>
+  <input type="text" name="prenom" id="prenom">
+  <span id="sp1"></span> <br>
+  <select multiple="multiple">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </select>
+  <span id="sp2"></span>
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      var titre = $('h1').html();
-      $('h1').html('<mark>DOM</mark> manipulé !')
-      $('#test').html(titre);
+      //dès que l'utilisateur va relacher la touche du clavier, le texte va s'afficher dans le span 
+      $('#prenom').keyup(function () {
+        //val = valeur du champ 
+        var valeurInput = $(this).val();
+        // que l'on va ajouter dans le span
+        $('#sp1').text(valeurInput);
+      });
+      // à chaque changement d'options 
+      $('select').change(function () {
+        // on passe également un tableau vide au cas où aucune option aurait été sélectionnée 
+        var valeurSelect = $('select').val() || [];
+        // si plusieurs options sont sélectionnées on sépare par une virgule
+        $('#sp1').text(valeurSelect.join(','));
+      })
     });
   </script>
 </body>
