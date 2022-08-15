@@ -24,9 +24,14 @@
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('.div1').on('mouseenter mouseleave', function () {
-        $('#msg').text('Vous êtes entrés ou sortis de la div');
-      })
+      $('.div1').on({
+        mouseenter: function () {
+          $('#msg').text('Vous êtes entrés dans la div')
+        },
+        mouseleave: function () {
+          $('#msg').text('Vous êtes sortis de la div');
+        }
+      });
 
     });
   </script>
