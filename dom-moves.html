@@ -26,10 +26,10 @@
 
 
   <h1>Manipulation du DOM</h1>
-  <ul>(elt ul n1)
+  <ul class="l1">(elt ul n1)
     <li>Premier élément de liste (elt li n°1.1)</li>
     <li>Element li contenant (elt li n°1.2)
-      <ul>(elt ul n2
+      <ul class="l2">(elt ul n2
         <li>une autre liste (elt li n°2.1)</li>
         <li>avec notre (elt li n°2.2) <span>span</span></li>
       </ul>
@@ -40,7 +40,7 @@
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('span').parents().css({
+      $('span').parentsUntil('l1').css({
         'color': 'blue',
         'border': '2px solid orange'
       });
