@@ -10,14 +10,19 @@
 
 <body>
   <h1>Gestion d'évènements focus </h1>
-  <label for="prenom">Entrez votre prénom :</label>
-  <input type="text" id="prenom" name="prenom">
+  <fieldset id="fld">
+    <label for="prenom">Entrez votre prénom :</label>
+    <input type="text" id="prenom" name="prenom">
+
+    <label for="name">Entrez votre nom</label>
+    <input type="text" id="nom" name="nom">
+  </fieldset>
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('#prenom').focus(function () {
-        $(this).css('background-color', 'yellow')
+      $('#fld').focusin(function () {
+        $(this).css('background-color', 'yellow');
       })
 
     });
