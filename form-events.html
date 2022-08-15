@@ -9,18 +9,15 @@
 </head>
 
 <body>
-  <h1>Gestion d'évènements clavier </h1>
+  <h1>Gestion d'évènements focus </h1>
   <label for="prenom">Entrez votre prénom :</label>
   <input type="text" id="prenom" name="prenom">
-  <p>Dernier caractère tapé : <span id="ascii"></span></p>
+
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      //keypress ne nécessite pas que l'on reste sur la touche comme keydown
-      $('#prenom').keypress(function (e) {
-        //la méthode charCode dépend de String pour transformer l'event en string
-        var touche = String.fromCharCode(e.which);
-        $('#ascii').text(touche);
+      $('#prenom').focus(function () {
+        $(this).css('background-color', 'yellow')
       })
 
     });
