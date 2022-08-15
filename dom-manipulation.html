@@ -11,26 +11,19 @@
 <body>
 
 
-  <h1 class="coucou">Utilisation de attr()</h1>
-  <h2 class="t">Utilisation de attr()</h2>
-  <a href="">Un lien</a> <br>
+  <h1>Utilisation de attr()</h1>
+  <label for="c">Cocher/décochez la case</label>
+  <input type="checkbox" id="c" checked="checked">
   <span id="test"></span>
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      //on récupère la valeur de l'attribut class de h1
-      var atth1 = $('h1').attr('class');
-      //on affiche cette valeur dans notre span
-      $('#test').text('Valeur de class de h1 :' + atth1);
-      //on modifie la valeur associée à l'attribut class de h2
-      $('h2').attr('class', 'titre');
-
-      /*On définit 2 attributs href et target pour a et on leur 
-      attribue des valeurs */
-      $('a').attr({
-        href: 'https://github.com/LaureCHAPERT',
-        //le lien s'ouvrira dans un nouvel onglet grace à _blank
-        target: '_blank'
+      $('#c').change(function () {
+        var v = $(this);
+        $('#test').html(
+          '<br> Valeur attribut : ' + v.attr('checked') +
+          '<br> Valeur propriété ' + v.prop('checked')
+        );
       });
     });
   </script>
