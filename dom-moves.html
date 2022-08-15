@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accéder à un élément enfant/parent/de même niveau</title>
+  <style>
+    span {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <h1>Manipulation du DOM</h1>
+  <p>Element p parent du <span>premier span</span></p>
+  <ul>
+    <li>Element li parent du <span>span n°2</span></li>
+    <li>Deuxieme élément li</li>
+  </ul>
+
+  <script src="../jquery-3.6.0.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('span').parent().css('color', 'red');
+
+    });
+  </script>
+</body>
+
+</html>
