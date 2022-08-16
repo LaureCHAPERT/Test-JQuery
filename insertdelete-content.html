@@ -6,27 +6,48 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FILTERED ELEMENTS</title>
+  <style>
+    #monDiv {
+      border: 2px solid orange;
+    }
+  </style>
 
 </head>
 
 <body>
   <h1>Filtrer les éléments HTML</h1>
-  <p id="p1">Premier paragraphe</p>
-  <p id="p2">Paragraphe</p>
-  <button id="b1">Utiliser append()</button>
-  <button id="b2">Utiliser prepend()</button>
 
+  <div id="monDiv">
+    <button id="b1">Utiliser append()</button>
+    <button id="b2">Utiliser prepend()</button>
+  </div>
   <span id="test"></span>
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
       $('#b1').click(function () {
-        $('#p1').append(' -Texte inséré avec append()');
+        avecAppend();
 
       });
       $('#b2').click(function () {
-        $('#p2').prepend(' -- Texte ajouté avec prepend()');
-      })
+        avecPrepend();
+      });
+
+      function avecAppend() {
+        var t1 = '<p> Paragraphe créé en HTML </p>';
+        var t2 = $('<p></p>').text('Paragraphe créé avec jQuery');
+        var t3 = document.createElement('p');
+        t3.innerHTML = 'Paragraphe créé avec du JavaScript'
+        $('#monDiv').append(t1, t2, t3);
+      };
+
+      function avecPrepend() {
+        var t4 = '<p> Paragraphe créé en HTML </p>';
+        var t5 = $('<p></p>').text('Paragraphe créé avec jQuery');
+        var t6 = document.createElement('p');
+        t6.innerHTML = 'Paragraphe créé avec du JavaScript'
+        $('#monDiv').prepend(t4, t5, t6);
+      }
     });
   </script>
 </body>
