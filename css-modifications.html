@@ -7,24 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modification des styles css</title>
   <style>
-    div {
-      border: 1px solid black;
-    }
-
-    .default {
-      font-size: 30px;
-    }
-
-    .orange {
-      background-color: orange;
-    }
-
-    .gras {
-      font-weight: bold;
-    }
-
-    .centre {
-      text-align: center;
+    p {
+      font-size: 16px;
     }
   </style>
 
@@ -34,19 +18,21 @@
 
 
   <h1>CSS</h1>
-  <div id="monDiv" class="default">
-    <p>Premier paragraphe</p>
-    <p>Deuxième paragraphe</p>
-  </div>
-  <button id="b1">Ajouter des attributs class au div</button>
+
+  <p>Premier paragraphe</p>
+  <p>Deuxième paragraphe</p>
+  <br>
+  <span id="msg"></span>
+  <button id="b1">Modifier la couleur des paragraphes</button>
 
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
+      var taille = $('p').css('font-size');
+      $('#msg').text('Taille du texte de base: ' + taille)
       $('#b1').click(function () {
-        //toggleClass désactive les anciennes classes et ajoute les nouvelles
-        $('#monDiv').toggleClass('default orange gras centre');
+        $('p').css('color', 'orange');
       });
     });
   </script>
