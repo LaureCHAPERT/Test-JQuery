@@ -23,12 +23,12 @@
   <script>
     $(document).ready(function () {
       $('#b1').click(function () {
-        //les trois vont s'exécuter en même temps
+        //les trois vont s'exécuter les uns après les autres
         $('h1').animate({
-          width: '-=10%',
-          fontSize: '20px',
-          left: '100px'
-        }, 1000)
+          width: '-=10%'
+        }, 5000).animate({
+          fontSize: '20px'
+        }, 2000).fadeTo(2000, 0.5);
       });
     });
   </script>
