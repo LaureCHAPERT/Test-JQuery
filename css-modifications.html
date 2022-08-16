@@ -23,7 +23,7 @@
   <p>Deuxième paragraphe</p>
   <br>
   <span id="msg"></span>
-  <button id="b1">Modifier la couleur des paragraphes</button>
+  <button id="b1">Modifier la couleur et le poids des paragraphes</button>
 
 
   <script src="../jquery-3.6.0.js"></script>
@@ -32,7 +32,10 @@
       var taille = $('p').css('font-size');
       $('#msg').text('Taille du texte de base: ' + taille)
       $('#b1').click(function () {
-        $('p').css('color', 'orange');
+        $('p').css({
+          'color': 'orange',
+          'font-weight': 'bold',
+        });
       });
     });
   </script>
