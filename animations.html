@@ -17,27 +17,15 @@
 
 <body>
   <h1>Animations</h1>
-  <button id="b1">Rapetisser le bloc</button>
-  <button id="b2">Rapetisser le texte</button>
-  <button id="b3">Décaler le titre vers la droite</button>
+  <button id="b1">Animer le titre</button>
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
       $('#b1').click(function () {
-        // Do not forget {} inside animate for modify css rules
         $('h1').animate({
-          width: '-=10%'
-        }, 1000)
-      });
-      $('#b2').click(function () {
-        $('h1').animate({
-          // with animate we have to use camelCase for css rules
-          fontSize: '20px'
-        }, 5000)
-      });
-      $('#b3').click(function () {
-        $('h1').animate({
+          width: '-=10%',
+          fontSize: '20px',
           left: '100px'
         }, 1000)
       });
