@@ -11,19 +11,16 @@
 <body>
   <h1>Fondu et slide</h1>
 
-  <button id="b1">Exécuter fadeOut() sur le titre</button>
-  <button id="b2">Exécuter fadeIn() sur le titre</button>
+  <button id="b1">Exécuter fadeToggle() sur le titre</button>
+
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
       $('#b1').click(function () {
-        $('h1').fadeOut(2000);
+        //toggle cumule fadeIn et fadeOut
+        $('h1').fadeToggle(2000);
       });
-      $('#b2').click(function () {
-        $('h1').fadeIn(2000);
-      });
-
     });
   </script>
 </body>
