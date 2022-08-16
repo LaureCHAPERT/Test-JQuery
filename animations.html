@@ -25,12 +25,14 @@
   <script>
     $(document).ready(function () {
       $('#b1').click(function () {
+        // Do not forget {} inside animate for modify css rules
         $('h1').animate({
           width: '-=10%'
         }, 1000)
       });
       $('#b2').click(function () {
         $('h1').animate({
+          // with animate we have to use camelCase for css rules
           fontSize: '20px'
         }, 5000)
       });
