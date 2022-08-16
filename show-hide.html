@@ -10,8 +10,10 @@
 
 <body>
   <h1>Afficher ou cacher </h1>
+  <span id="msg"></span>
   <button id="b1">Cacher le titre avec hide()</button>
   <button id="b2">Afficher le titre avec show()</button>
+
 
 
 
@@ -20,10 +22,12 @@
   <script>
     $(document).ready(function () {
       $('#b1').click(function () {
-        $('h1').hide();
+        $('h1').hide(5000, function () {
+          $('#msg').html('Titre caché<br>')
+        });
       });
       $('#b2').click(function () {
-        $('h1').show();
+        $('h1').show('normal');
       })
     });
   </script>
