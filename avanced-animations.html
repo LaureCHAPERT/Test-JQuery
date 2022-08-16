@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animations</title>
+  <title>QUEUE</title>
   <style>
     h1 {
       background-color: orange;
@@ -16,28 +16,30 @@
 </head>
 
 <body>
-  <h1>Animations</h1>
+  <h1>File d'attente</h1>
   <button id="b1">Animer le titre</button>
+  <p>Taille de la queue : <span></span></p>
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
       $('#b1').click(function () {
-        //les trois vont s'exécuter les uns après les autres
-        $('h1').animate({
-          width: '-=10%'
-        }, {
-          /*on utilise queue (par défaut mis à true) en false pour que 
-          les actions s'effectuent les unes après les autres */
-          queue: false,
-          duration: 5000
-        }).animate({
-          fontSize: '20px'
-        }, {
-          queue: false,
-          duration: 2000
-        }).fadeTo(2000, 0.5);
+        $('h1')
+          .animate({
+            width: '-=10%'
+          }, 5000)
+          .animate({
+            fontSize: '20px'
+          }, 2000)
+          .fadeTo(2000, 0.5);
       });
+
+      function enAttente() {
+        var n = $('h1').queue('fx');
+        $('span').text(n.length);
+        setTimeout(enAttente, 10);
+      };
+      enAttente();
     });
   </script>
 </body>
