@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FILTERED ELEMENTS</title>
+
+</head>
+
+<body>
+  <h1>Filtrer les éléments HTML</h1>
+  <p id="p1">Premier paragraphe</p>
+  <p id="p2">Paragraphe</p>
+  <button id="b1">Utiliser append()</button>
+  <button id="b2">Utiliser prepend()</button>
+
+  <span id="test"></span>
+  <script src="../jquery-3.6.0.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#b1').click(function () {
+        $('#p1').append(' -Texte inséré avec append()');
+
+      });
+      $('#b2').click(function () {
+        $('#p2').prepend(' -- Texte ajouté avec prepend()');
+      })
+    });
+  </script>
+</body>
+
+</html>
