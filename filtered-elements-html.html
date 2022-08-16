@@ -6,23 +6,52 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FILTERED ELEMENTS</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+  </style>
 </head>
 
 <body>
-
-
   <h1>Filtrer les éléments HTML</h1>
-  <p>Un premier paragraphe</p>
-  <p>Un second paragraphe</p>
-  <p>Un troisième paragraphe</p>
-  <p>Un dernier paragraphe</p>
+  <ul>
+    <li>Element numero 1 </li>
+    <li>Element numero 2 </li>
+    <li>Element numero 3 </li>
+    <li>Element numero 4 </li>
+  </ul>
+  <table>
+    <tr>
+      <th>Prénom</th>
+      <th>Nom</th>
+    </tr>
+    <tr>
+      <td>Pierre</td>
+      <td>Giraud</td>
+    </tr>
+    <tr>
+      <td>Victor</td>
+      <td>Durand</td>
+    </tr>
+    <tr>
+      <td>Pauline</td>
+      <td>Joly</td>
+    </tr>
+  </table>
 
   <span id="test"></span>
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('p').eq(1).css('color', 'blue');
-      $('p').eq(-2).css('color', 'red');
+      $('li').filter(':nth-child(even)').css('color', 'blue');
+      $('tr').filter(':nth-child(odd)').css('background-color', 'orange')
 
     });
   </script>
