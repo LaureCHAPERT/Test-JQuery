@@ -6,29 +6,49 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Autres opérations sur le DOM</title>
+  <style>
+    div {
+      margin: 5px;
+      padding: 5px;
+    }
+
+    .wrap {
+      border: 1px solid red;
+    }
+
+    .wrapA {
+      border: 1px solid blue;
+    }
+
+    .wrapI {
+      border: 1px solid lime;
+    }
+  </style>
 </head>
 
 <body>
 
 
   <h1>Utilisation d'autres méthodes sur le DOM</h1>
-  <p id="p1">Premier paragraphe</p>
-  <p id="p2">Second paragraphe</p>
+  <p class="toWrap">Premier paragraphe</p>
+  <p class="toWrap">Second paragraphe</p>
 
-  <button id="b1">Utiliser replaceWith()</button>
-  <button id="b2">Utiliser replaceAll()</button>
+  <p class="toWrapAll">Troisième paragraphe</p>
+  <p class="toWrapAll">Quatrième paragraphe</p>
+
+  <p class="toWrapInner">Cinquième paragraphe</p>
+  <p class="toWrapInner">SIXIème paragraphe</p>
+
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('#b1').click(function () {
-        //on cible un élément que l'on remplace par un contenu
-        $('#p1').replaceWith('<h2> Un titre </h2>');
-      });
-      $('#b2').click(function () {
-        //on créé un contenu et on cible tous les éléments en arguments
-        $('<h2> Un autre titre </h2>').replaceAll('#p2');
-      })
+      //entoure chaque élément de la sélection
+      $('.toWrap').wrap("<div class='wrap'></div>");
+      //wrapAll entour tous les éléments portant cette classe (une seule div)
+      $('.toWrapAll').wrapAll("<div class='wrapA'></div>");
+      //entoure le contenu de chaque élément
+      $('.toWrapInner').wrapInner("<div class='wrapI'></div>");
     });
   </script>
 </body>
