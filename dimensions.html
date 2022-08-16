@@ -8,7 +8,7 @@
   <title>Gestion des dimensions</title>
   <style>
     p {
-      padding: 10px;
+      padding: 10px 20px;
       margin: 20px;
       border: 1px solid black;
     }
@@ -23,29 +23,16 @@
   <p>Premier paragraphe</p>
   <p>Deuxième paragraphe</p>
   <span id="sp1"></span><br>
-  <span id="sp2"></span><br><br>
-  <button id="b1">Chnager la taille de nos éléments</button>
-
 
 
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      //on utilise width et height pour récupérer la valeur de bases => GETTER
-      var l1 = $('p').width();
-      var h1 = $('p').height();
-      $('#sp1').text('Taille de départ  ' + h1 + '*' + l1 + 'px');
-
-      $('#b1').click(function () {
-        //On utilise width et height pour modifier les valeurs de bases => SETTER
-        $('p').width('300px');
-        $('p').height('100px');
-
-        var l2 = $('p').width();
-        var h2 = $('p').height();
-        $('#sp2').text('Nouvelle taille  ' + h2 + '*' + l2 + 'px');
-      });
+      //GETTER comme width et height MAIS AVEC LE PADDING pris en compte
+      var l = $('p').innerWidth();
+      var h = $('p').innerHeight();
+      $('#sp1').text('Taille (avec padding) : ' + h + '*' + l + 'px')
     });
   </script>
 </body>
