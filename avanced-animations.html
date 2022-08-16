@@ -24,6 +24,7 @@
 <body>
   <h1>File d'attente</h1>
   <button id="b1">Animer la div</button>
+  <button id="b2">Arrêter l'animation</button>
   <div></div>
 
   <script src="../jquery-3.6.0.js"></script>
@@ -50,6 +51,9 @@
             top: '+=50px'
           }, 400)
       });
+      $('#b2').click(function () {
+        $('div').clearQueue();
+      })
     });
   </script>
 </body>
