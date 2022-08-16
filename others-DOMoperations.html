@@ -12,16 +12,10 @@
       padding: 5px;
     }
 
-    .wrap {
-      border: 1px solid red;
-    }
+
 
     .wrapA {
       border: 1px solid blue;
-    }
-
-    .wrapI {
-      border: 1px solid lime;
     }
   </style>
 </head>
@@ -30,25 +24,23 @@
 
 
   <h1>Utilisation d'autres méthodes sur le DOM</h1>
-  <p class="toWrap">Premier paragraphe</p>
-  <p class="toWrap">Second paragraphe</p>
+  <p class="toWrapAll">Premier paragraphe</p>
+  <p class="toWrapAll">Second paragraphe</p>
+  <button id="b1">Ajouter un div avec wrapAll()</button>
+  <button id="b2">Supprimer un div avec unwrap()</button>
 
-  <p class="toWrapAll">Troisième paragraphe</p>
-  <p class="toWrapAll">Quatrième paragraphe</p>
-
-  <p class="toWrapInner">Cinquième paragraphe</p>
-  <p class="toWrapInner">SIXIème paragraphe</p>
 
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      //entoure chaque élément de la sélection
-      $('.toWrap').wrap("<div class='wrap'></div>");
-      //wrapAll entour tous les éléments portant cette classe (une seule div)
-      $('.toWrapAll').wrapAll("<div class='wrapA'></div>");
-      //entoure le contenu de chaque élément
-      $('.toWrapInner').wrapInner("<div class='wrapI'></div>");
+      $('#b1').click(function () {
+        $('.toWrapAll').wrapAll("<div class='wrapA'></div>");
+      });
+      $('#b2').click(function () {
+        $('.toWrapAll').unwrap();
+      })
+
     });
   </script>
 </body>
