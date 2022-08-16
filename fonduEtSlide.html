@@ -17,18 +17,15 @@
 <body>
   <h1>Fondu et slide</h1>
 
-  <button id="b1">Exécuter slideUp() sur le titre</button>
-  <button id="b2">Exécuter slideDown() sur le titre</button>
+  <button id="b1">Exécuter slideToggle() sur le titre</button>
+
 
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
       $('#b1').click(function () {
-        $('h1').slideUp(2000);
-      });
-      $('#b2').click(function () {
-        $('h1').slideDown(2000);
+        $('h1').slideToggle(2000);
       });
     });
   </script>
