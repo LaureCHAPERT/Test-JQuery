@@ -7,45 +7,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FILTERED ELEMENTS</title>
   <style>
-    #monDiv {
-      border: 2px solid orange;
+    div {
+      margin: 10px;
+    }
+
+    #div1 {
+      border: 1px solid orange;
+    }
+
+    #div2 {
+      border: 1px solid blue;
     }
   </style>
+
 
 </head>
 <!--append/prepend after/before-->
 
 <body>
   <h1>Filtrer les éléments HTML</h1>
-
-  <div id="monDiv">
-    <p>Un paragraphe</p>
-    <button id="b1">Utiliser after()</button>
-    <button id="b2">Utiliser before()</button>
-    <button id="b3">Utiliser append()</button>
-    <button id="b4">Utiliser prepend()</button>
+  <div id="div1">
+    <p>Premier paragraphe du div 1</p>
+    <p>Autre paragraphe du div 1</p>
   </div>
+  <div id="div2">
+    <p>Premier paragraphe du div 2</p>
+    <p>Autre paragraphe du div 2</p>
+  </div>
+  <button id="b1">Supprimer le #div1</button>
+  <button id="b2">Supprimer le #div2</button>
+
   <span id="test"></span>
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
       $('#b1').click(function () {
-        //texte inséré après la div et non plus dedans
-        $('#monDiv').after('Text inséré avec  after()');
+        $('#div1').remove();
 
       });
       $('#b2').click(function () {
-        //texte inséré avant la div et non plus dedans
-        $('#monDiv').before('Texte inséré avec before()')
-      });
-      $('#b3').click(function () {
-        //texte inséré à la fin de la div mais à l'intérieur
-        $('#monDiv').append('Texte inséré avec append()')
-      });
-      $('#b4').click(function () {
-        //texte inséré au début de la div mais à l'intérieur
-        $('#monDiv').prepend('Texte inséré avec prepend()')
-      });
+        $('div').remove('#div2');
+      })
 
 
     });
