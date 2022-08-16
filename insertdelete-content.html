@@ -6,19 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FILTERED ELEMENTS</title>
-  <style>
-    div {
-      margin: 10px;
-    }
 
-    #div1 {
-      border: 1px solid orange;
-    }
-
-    #div2 {
-      border: 1px solid blue;
-    }
-  </style>
 
 
 </head>
@@ -26,30 +14,16 @@
 
 <body>
   <h1>Filtrer les éléments HTML</h1>
-  <div id="div1">
-    <p>Premier paragraphe du div 1</p>
-    <p>Autre paragraphe du div 1</p>
-  </div>
-  <div id="div2">
-    <p>Premier paragraphe du div 2</p>
-    <p>Autre paragraphe du div 2</p>
-  </div>
-  <button id="b1">Supprimer le #div1</button>
-  <button id="b2">Supprimer les enfants du #div2</button>
+  <p>LIen vers <a href="https://www.alsacreations.com">Alsa créations</a></p>
+  <button>Cliquer pour supprimer l'attribut href</button>
 
-  <span id="test"></span>
+
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('#b1').click(function () {
-        $('#div1').remove();
-
-      });
-      $('#b2').click(function () {
-        $('#div2').empty();
+      $('button').click(function () {
+        $('a').removeAttr('href');
       })
-
-
     });
   </script>
 </body>
