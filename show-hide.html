@@ -22,11 +22,13 @@
   <script>
     $(document).ready(function () {
       $('#b1').click(function () {
+        //temps pour que le titre soit caché et ensuite un message s'affiche (fonction de rappel)
         $('h1').hide(5000, function () {
           $('#msg').html('Titre caché<br>')
         });
       });
       $('#b2').click(function () {
+        //temps pour que le titre apparaisse
         $('h1').show('normal');
       })
     });
