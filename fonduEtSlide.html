@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Effets de fondu et de slide</title>
+</head>
+
+<body>
+  <h1>Fondu et slide</h1>
+
+  <button id="b1">Exécuter fadeOut() sur le titre</button>
+  <button id="b2">Exécuter fadeIn() sur le titre</button>
+
+  <script src="../jquery-3.6.0.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#b1').click(function () {
+        $('h1').fadeOut(2000);
+      });
+      $('#b2').click(function () {
+        $('h1').fadeIn(2000);
+      });
+
+    });
+  </script>
+</body>
+
+</html>
