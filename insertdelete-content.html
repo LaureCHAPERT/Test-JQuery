@@ -15,14 +15,17 @@
 <body>
   <h1>Filtrer les éléments HTML</h1>
   <p>LIen vers <a href="https://www.alsacreations.com">Alsa créations</a></p>
-  <button>Cliquer pour supprimer l'attribut href</button>
-
+  <button id="b1">Cliquer pour supprimer l'attribut href</button>
+  <button id="b2">Cliquer pour ajouter l'attribut href</button>
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      $('button').click(function () {
+      $('#b1').click(function () {
         $('a').removeAttr('href');
+      })
+      $('#b2').click(function () {
+        $('a').attr('href', 'https://www.alsacreations.com');
       })
     });
   </script>
