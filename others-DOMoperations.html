@@ -22,9 +22,11 @@
   <script>
     $(document).ready(function () {
       $('#b1').click(function () {
+        //on cible un élément que l'on remplace par un contenu
         $('#p1').replaceWith('<h2> Un titre </h2>');
       });
       $('#b2').click(function () {
+        //on créé un contenu et on cible tous les éléments en arguments
         $('<h2> Un autre titre </h2>').replaceAll('#p2');
       })
     });
