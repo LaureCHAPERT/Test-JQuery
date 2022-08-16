@@ -11,15 +11,15 @@
 <body>
   <h1>Fondu et slide</h1>
 
-  <button id="b1">Exécuter fadeToggle() sur le titre</button>
+  <button id="b1">Exécuter fadeTo() sur le titre</button>
 
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
       $('#b1').click(function () {
-        //toggle cumule fadeIn et fadeOut
-        $('h1').fadeToggle(2000);
+        //fadeTo règle la durée et l'opacité
+        $('h1').fadeTo(2000, 0.5);
       });
     });
   </script>
