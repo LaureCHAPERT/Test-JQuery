@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autres opérations sur le DOM</title>
+</head>
+
+<body>
+
+
+  <h1>Utilisation d'autres méthodes sur le DOM</h1>
+  <p id="p1">Premier paragraphe</p>
+  <p id="p2">Second paragraphe</p>
+  <button>Cliquez pour remplacer l'élément #p1</button> <br>
+  <span id="msg"></span>
+
+  <script src="../jquery-3.6.0.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('button').click(function () {
+        var rpl = $('#p1').replaceWith('<h2> Un titre </h2>');
+        $('#msg').text('Ancien texte : ' + rpl.text());
+      })
+    });
+  </script>
+</body>
+
+</html>
