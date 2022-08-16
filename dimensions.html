@@ -8,8 +8,10 @@
   <title>Gestion des dimensions</title>
   <style>
     p {
+      width: 500px;
+      height: 20px;
       padding: 10px 20px;
-      margin: 20px;
+      margin: 20px 5px 10px 8px;
       border: 1px solid black;
     }
   </style>
@@ -29,10 +31,15 @@
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
-      //GETTER comme width et height MAIS AVEC LE PADDING pris en compte
-      var l = $('p').innerWidth();
-      var h = $('p').innerHeight();
-      $('#sp1').text('Taille (avec padding) : ' + h + '*' + l + 'px')
+      var l = $('p').outerWidth();
+      //avec true => +marges extérieures
+      var lt = $('p').outerWidth(true);
+      var h = $('p').outerHeight();
+      //avec true => +marges extérieures
+      var ht = $('p').outerHeight(true);
+
+      $('#sp1').html('Outer taille: ' + h + ' * ' + l + 'px <br>' + 'Outer Taille totale : ' +
+        ht + '*' + lt + 'px')
     });
   </script>
 </body>
