@@ -13,41 +13,41 @@
   </style>
 
 </head>
+<!--append/prepend after/before-->
 
 <body>
   <h1>Filtrer les éléments HTML</h1>
 
   <div id="monDiv">
-    <button id="b1">Utiliser append()</button>
-    <button id="b2">Utiliser prepend()</button>
+    <p>Un paragraphe</p>
+    <button id="b1">Utiliser after()</button>
+    <button id="b2">Utiliser before()</button>
+    <button id="b3">Utiliser append()</button>
+    <button id="b4">Utiliser prepend()</button>
   </div>
   <span id="test"></span>
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
       $('#b1').click(function () {
-        avecAppend();
+        //texte inséré après la div et non plus dedans
+        $('#monDiv').after('Text inséré avec  after()');
 
       });
       $('#b2').click(function () {
-        avecPrepend();
+        //texte inséré avant la div et non plus dedans
+        $('#monDiv').before('Texte inséré avec before()')
+      });
+      $('#b3').click(function () {
+        //texte inséré à la fin de la div mais à l'intérieur
+        $('#monDiv').append('Texte inséré avec append()')
+      });
+      $('#b4').click(function () {
+        //texte inséré au début de la div mais à l'intérieur
+        $('#monDiv').prepend('Texte inséré avec prepend()')
       });
 
-      function avecAppend() {
-        var t1 = '<p> Paragraphe créé en HTML </p>';
-        var t2 = $('<p></p>').text('Paragraphe créé avec jQuery');
-        var t3 = document.createElement('p');
-        t3.innerHTML = 'Paragraphe créé avec du JavaScript'
-        $('#monDiv').append(t1, t2, t3);
-      };
 
-      function avecPrepend() {
-        var t4 = '<p> Paragraphe créé en HTML </p>';
-        var t5 = $('<p></p>').text('Paragraphe créé avec jQuery');
-        var t6 = document.createElement('p');
-        t6.innerHTML = 'Paragraphe créé avec du JavaScript'
-        $('#monDiv').prepend(t4, t5, t6);
-      }
     });
   </script>
 </body>
