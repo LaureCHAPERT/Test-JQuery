@@ -39,17 +39,15 @@
     <p>Deuxième paragraphe</p>
   </div>
   <button id="b1">Ajouter des attributs class au div</button>
-  <button id="b2">Supprimer des attributs class au div</button>
+
 
   <script src="../jquery-3.6.0.js"></script>
   <script>
     $(document).ready(function () {
       $('#b1').click(function () {
-        $('#monDiv').addClass('orange gras centre');
+        //toggleClass désactive les anciennes classes et ajoute les nouvelles
+        $('#monDiv').toggleClass('default orange gras centre');
       });
-      $('#b2').click(function () {
-        $('#monDiv').removeClass('default orange gras centre');
-      })
     });
   </script>
 </body>
