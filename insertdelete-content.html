@@ -35,7 +35,7 @@
     <p>Autre paragraphe du div 2</p>
   </div>
   <button id="b1">Supprimer le #div1</button>
-  <button id="b2">Supprimer le #div2</button>
+  <button id="b2">Supprimer les enfants du #div2</button>
 
   <span id="test"></span>
   <script src="../jquery-3.6.0.js"></script>
@@ -46,7 +46,7 @@
 
       });
       $('#b2').click(function () {
-        $('div').remove('#div2');
+        $('#div2').empty();
       })
 
 
